@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/camera_fragment">
+
+    <fragment
+        android:id="@+id/permissions_fragment"
+        android:name="com.madcv.roadeye.fragments.PermissionsFragment"
+        android:label="PermissionsFragment">
+        <action
+            android:id="@+id/action_permissions_fragment_to_camera_fragment2"
+            app:destination="@id/camera_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/camera_fragment"
+        android:name="com.madcv.roadeye.fragments.CameraFragment"
+        android:label="CameraFragment">
+        <action
+            android:id="@+id/action_camera_fragment_to_permissions_fragment"
+            app:destination="@id/permissions_fragment" />
+        <action
+            android:id="@+id/action_camera_fragment_to_gallery_fragment"
+            app:destination="@id/gallery_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gallery_fragment"
+        android:name="com.madcv.roadeye.fragments.GalleryFragment"
+        android:label="GalleryFragment" >
+        <action
+            android:id="@+id/action_gallery_fragment_to_camera_fragment"
+            app:destination="@id/camera_fragment" />
+    </fragment>
+</navigation>
